@@ -1,17 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR" && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MISE_CONFIG="$PROJECT_ROOT/configs/mise/config.toml"
 
-if [[ $(uname -s) == "Darwin" ]]; then
-    if ! command -v brew >/dev/null 2>&1; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    fi
-    brew bundle --file="$PROJECT_ROOT/Brewfile"
-fi
+brew bundle --file="$PROJECT_ROOT/Brewfile"
 
 if command -v mise >/dev/null 2>&1; then
     MISE_BIN="$(command -v mise)"
@@ -24,13 +17,5 @@ else
 fi
 
 export MISE_GLOBAL_CONFIG_FILE="${MISE_CONFIG}"
-if [[ -f "${PROJECT_ROOT}/.env" ]]; then
-    export MISE_ENV_FILE="${PROJECT_ROOT}/.env"
-    tmp=$(mktemp)
-    "${MISE_BIN}" env -s zsh | awk '/^export DOTFILE_ENV_/ { print }' >"$tmp"
-    mv "$tmp" "$HOME/.env.dotfile"
-else
-    rm -f "$HOME/.env.dotfile"
-fi
 
 "${MISE_BIN}" bootstrap --yes --force-dotfiles
