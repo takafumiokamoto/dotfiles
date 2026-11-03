@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 config.automatically_reload_config = true
-config.font_size = 16
+config.font_size = 14
 config.font_dirs = {
     wezterm.config_dir .. "/fonts",
 }
@@ -29,13 +29,6 @@ config.window_padding = {
 }
 local action = wezterm.action
 config.keys = {
-    { key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\n" }) },
-    {
-        key = "w",
-        mods = "SHIFT|CTRL",
-        action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
-    },
-    { key = "v", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
     {
         key = "%",
         mods = "SHIFT|CTRL",
@@ -65,34 +58,6 @@ config.keys = {
         key = "J",
         mods = "SHIFT|CTRL",
         action = wezterm.action({ ActivatePaneDirection = "Down" }),
-    },
-    {
-        key = "LeftArrow",
-        mods = "SHIFT",
-        action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }),
-    },
-    {
-        key = "RightArrow",
-        mods = "SHIFT",
-        action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }),
-    },
-    {
-        key = "UpArrow",
-        mods = "SHIFT",
-        action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }),
-    },
-    {
-        key = "DownArrow",
-        mods = "SHIFT",
-        action = wezterm.action({ AdjustPaneSize = { "Down", 5 } }),
-    },
-    {
-        key = "PageDown",
-        action = wezterm.action({ ScrollByPage = 0.25 }),
-    },
-    {
-        key = "PageUp",
-        action = wezterm.action({ ScrollByPage = -0.25 }),
     },
 }
 config.mouse_bindings = {

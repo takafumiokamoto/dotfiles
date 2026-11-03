@@ -62,6 +62,7 @@ yazi = "latest"
 "~/.config/mise" = { source = ".", mode = "symlink" }
 "~/.config/nvim" = { source = "../nvim", mode = "symlink" }
 "~/.config/wezterm" = { source = "../wezterm", mode = "symlink" }
+"~/.config/neovide" = { source = "../neovide", mode = "symlink" }
 "~/.codex/AGENTS.md" = { source = "../codex/AGENTS.md", mode = "symlink" }
 "~/.config/starship" = { source = "../starship", mode = "symlink" }
 "~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }
