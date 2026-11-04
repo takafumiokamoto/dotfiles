@@ -14,7 +14,7 @@ experimental = true
 "pacman:gcc" = "latest"
 
 [bootstrap.user]
-login_shell = "/bin/zsh"
+login_shell = "zsh"
 
 [bootstrap.mise_shell_activate]
 zsh = true

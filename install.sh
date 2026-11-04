@@ -4,7 +4,11 @@ set -euo pipefail
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MISE_CONFIG="$PROJECT_ROOT/configs/mise/config.toml"
 
-brew bundle --file="$PROJECT_ROOT/Brewfile"
+cd "$PROJECT_ROOT"
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    brew bundle --file="$PROJECT_ROOT/Brewfile"
+fi
 
 if command -v mise >/dev/null 2>&1; then
     MISE_BIN="$(command -v mise)"

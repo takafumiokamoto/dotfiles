@@ -1,4 +1,4 @@
-cask "font-moralerspace"
+cask "font-guguru-sans-code"
 cask "neovide-app"
 cask "kitty"
 cask "karabiner-elements"
