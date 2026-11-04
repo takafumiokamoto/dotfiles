@@ -1,5 +1,6 @@
 -- clipboard
 vim.keymap.set("v", "<C-c>", [["+y]], { desc = "Copy to Clipboard" })
+vim.keymap.set("v", "<D-c>", [["+y]], { desc = "Copy to Clipboard" })
 vim.keymap.set("v", "<C-x>", [["+d]], { desc = "Cut to Clipboard" })
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select All" })
 

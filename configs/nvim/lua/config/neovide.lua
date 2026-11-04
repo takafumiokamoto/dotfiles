@@ -1,7 +1,8 @@
-vim.o.guifont = "Moralerspace Neon:b:i:h14"
 vim.opt.linespace = -1
 vim.keymap.set({ "n", "v" }, "<C-v>", [["+p]])
+vim.keymap.set({ "n", "v" }, "<D-v>", [["+p]])
 vim.keymap.set({ "i", "c" }, "<C-v>", "<C-r>+")
+vim.keymap.set({ "i", "c" }, "<D-v>", "<C-r>+")
 vim.g.neovide_fullscreen = false
 local normal_hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 local main_color = normal_hl.bg and string.format("%x", normal_hl.bg) or "282c34"
