@@ -1,5 +1,6 @@
 [settings]
 experimental = true
+lockfile = true
 
 [bootstrap.packages]
 "apk:zsh" = "latest"

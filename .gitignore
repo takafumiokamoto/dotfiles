@@ -2,8 +2,6 @@
 .DS_Store
 # fonts
 *.ttf
-# lazy.nvim
-lazy-lock.json
 # env
 .env
 # karabiner
