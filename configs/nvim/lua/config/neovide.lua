@@ -12,7 +12,23 @@ vim.g.neovide_title_background_color = main_color
 vim.g.neovide_title_text_color = main_color
 vim.g.neovide_floating_blur_amount_x = 2.0
 vim.g.neovide_floating_blur_amount_y = 2.0
-vim.g.neovide_input_ime = true
+vim.g.neovide_input_macos_option_key_is_meta = "only_left"
+
+vim.g.neovide_input_ime = false
+local ime_input = vim.api.nvim_create_augroup("ime_input", { clear = true })
+local function set_ime(args)
+    vim.g.neovide_input_ime = args.event:match("Enter$") ~= nil
+end
+vim.api.nvim_create_autocmd({ "InsertEnter", "InsertLeave", "TermEnter", "TermLeave" }, {
+    group = ime_input,
+    callback = set_ime,
+})
+vim.api.nvim_create_autocmd({ "CmdlineEnter", "CmdlineLeave" }, {
+    group = ime_input,
+    pattern = "[\\/\\?]",
+    callback = set_ime,
+})
+
 vim.g.neovide_padding_top = 0
 vim.g.neovide_padding_bottom = 0
 vim.g.neovide_padding_right = 0

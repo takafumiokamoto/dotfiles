@@ -17,7 +17,7 @@ experimental = true
 login_shell = "zsh"
 
 [bootstrap.mise_shell_activate]
-zsh = true
+zprofile = true
 
 [tools]
 # Go
@@ -80,12 +80,11 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.config/neovide" = { source = "../neovide", mode = "symlink" }
 "~/.config/starship" = { source = "../starship", mode = "symlink" }
 "~/.config/herdr/config.toml" = { source = "../herdr/config.toml", mode = "symlink" }
+"~/.config/karabiner" = { source = "../karabiner", mode = "symlink" }
+
+# zsh
 "~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }
+"~/.zshrc" = { source = "../zsh/.zshrc", mode = "symlink" }
 "~/.aliases.zsh" = { source = "../zsh/.aliases.zsh", mode = "symlink" }
 "~/.hushlogin" = { source = "../zsh/.hushlogin", mode = "symlink" }
-"~/.zshrc/aliases" = { block = '''
-source "$HOME/.aliases.zsh"
-''' }
-"~/.zshrc/starship" = { block = 'eval "$(starship init zsh)"' }
-"~/.config/karabiner" = { source = "../karabiner", mode = "symlink" }
 

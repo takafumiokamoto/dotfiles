@@ -2,7 +2,7 @@ onboarding = false
 
 [theme]
 #name = "vesper"
-name = "terminal"
+name = "vesper"
 auto_switch = false
 
 [keys]
@@ -11,6 +11,7 @@ split_horizontal = 'prefix+"'
 previous_workspace = "prefix+("
 next_workspace = "prefix+)"
 switch_workspace = "prefix+ctrl+1..9"
+toggle_sidebar = "ctrl+alt+b"
 
 [ui]
 #window_title = "{hostname}: {workspace}"
