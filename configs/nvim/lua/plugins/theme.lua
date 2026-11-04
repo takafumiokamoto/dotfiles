@@ -34,18 +34,6 @@ return {
         end,
     },
     {
-        "JoosepAlviste/palenightfall.nvim",
-    },
-    {
-        "alligator/accent.vim",
-    },
-    {
-        "huyvohcmc/atlas.vim",
-    },
-    {
-        "navarasu/onedark.nvim",
-    },
-    {
-        "sainnhe/edge",
+        "danilo-augusto/vim-afterglow",
     },
 }

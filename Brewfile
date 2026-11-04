@@ -1,4 +1,4 @@
-cask "font-moralerspace-jpdoc"
+cask "font-moralerspace"
 cask "neovide-app"
 cask "wezterm"
 cask "karabiner-elements"

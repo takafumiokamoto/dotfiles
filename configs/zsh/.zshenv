@@ -6,3 +6,4 @@ if [[ -n "${WSL_DISTRO_NAME:-}" ]]; then
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR=nvim

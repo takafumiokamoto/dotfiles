@@ -1,4 +1,4 @@
-vim.o.guifont = "Moralerspace Neon JPDOC:b:i:h14"
+vim.o.guifont = "Moralerspace Neon:b:i:h14"
 vim.opt.linespace = -1
 vim.keymap.set({ "n", "v" }, "<C-v>", [["+p]])
 vim.keymap.set({ "i", "c" }, "<C-v>", "<C-r>+")

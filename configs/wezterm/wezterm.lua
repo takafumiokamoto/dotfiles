@@ -6,9 +6,9 @@ config.font_dirs = {
     wezterm.config_dir .. "/fonts",
 }
 config.font = wezterm.font_with_fallback({
-    { family = "Moralerspace Neon JPDOC", italic = false, weight = "Bold" },
+    { family = "Moralerspace Neon" },
 })
-config.color_scheme = "DoomOne"
+config.color_scheme = "Afterglow"
 config.hide_tab_bar_if_only_one_tab = true
 config.audible_bell = "Disabled"
 config.notification_handling = "NeverShow"
