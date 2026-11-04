@@ -93,6 +93,25 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "description": "Hyper + 4 → CotEditor",
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "mandatory": ["command", "control", "option", "shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "software_function": {
+                                            "open_application": {
+                                                "bundle_identifier": "com.coteditor.CotEditor"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
