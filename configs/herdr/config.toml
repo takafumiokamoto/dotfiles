@@ -1,0 +1,23 @@
+onboarding = false
+
+[theme]
+#name = "vesper"
+name = "terminal"
+auto_switch = false
+
+[keys]
+split_vertical = "prefix+%"
+split_horizontal = 'prefix+"'
+previous_workspace = "prefix+("
+next_workspace = "prefix+)"
+switch_workspace = "prefix+ctrl+1..9"
+
+[ui]
+#window_title = "{hostname}: {workspace}"
+window_title = "{workspace}"
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "herdr"

@@ -6,6 +6,7 @@ experimental = true
 "apt:zsh" = "latest"
 "dnf:zsh" = "latest"
 "pacman:zsh" = "latest"
+
 # C compiler
 "apk:build-base" = "latest"
 "apt:build-essential" = "latest"
@@ -23,24 +24,39 @@ zsh = true
 go = "latest"
 "go:golang.org/x/tools/gopls" = { version = "latest", depends = "go" }
 "go:github.com/go-delve/delve/cmd/dlv" = { version = "latest", depends = "go" }
+golangci-lint = "latest"
+
 # node
 node = "latest"
 "npm:@vtsls/language-server" = { version = "latest", depends = "node" }
-"npm:vscode-json-languageserver" = "latest"
+"npm:vscode-json-languageserver" = { version = "latest", depends = "node" }
 pnpm = "latest"
 oxfmt = "latest"
+
 # Python
 python = "latest"
 uv = "latest"
+"npm:pyright" = { version = "latest", depends = "node" }
+"pypi:debugpy" = { version = "latest", depends = "uv" }
+
 # Rust
 rust = "latest"
+rust-analyzer = "latest"
+
 # Lua
 lua-language-server = "latest"
 stylua = "latest"
+
 # shell
 "npm:bash-language-server" = "latest"
 shfmt = "latest"
 
+# terraform
+terraform = "latest"
+terraform-ls = "latest"
+
+# tools
+pinact = "latest"
 tree-sitter = "latest"
 fd = "latest"
 fzf = "latest"
@@ -49,13 +65,12 @@ ripgrep = "latest"
 starship = "latest"
 gh = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
-"aqua:openai/codex" = { version = "latest", minimum_release_age = "0d" }
+task = "latest"
+herdr = { version = "latest", minimum_release_age = "0d" }
+
+# AI
+codex = { version = "latest", minimum_release_age = "0d" }
 claude = { version = "latest", minimum_release_age = "0d" }
-rust-analyzer = "latest"
-golangci-lint = "latest"
-terraform = "latest"
-pinact = "latest"
-"aqua:go-task/task" = "latest"
 
 [dotfiles]
 "~/.config/mise" = { source = ".", mode = "symlink" }
@@ -64,6 +79,7 @@ pinact = "latest"
 "~/.config/kitty" = { source = "../kitty", mode = "symlink" }
 "~/.config/neovide" = { source = "../neovide", mode = "symlink" }
 "~/.config/starship" = { source = "../starship", mode = "symlink" }
+"~/.config/herdr/config.toml" = { source = "../herdr/config.toml", mode = "symlink" }
 "~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }
 "~/.aliases.zsh" = { source = "../zsh/.aliases.zsh", mode = "symlink" }
 "~/.hushlogin" = { source = "../zsh/.hushlogin", mode = "symlink" }

@@ -20,27 +20,56 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug: Start or continue" })
-        vim.keymap.set("n", "<S-F5>", dap.terminate, { desc = "Debug: Terminate" })
-        vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Debug: Toggle breakpoint" })
-        vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Debug: Step over" })
-        vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Debug: Step into" })
-        vim.keymap.set("n", "<S-F11>", dap.step_out, { desc = "Debug: Step out" })
+        -- Prefer the project's .venv so imports resolve the same way as at runtime.
+        local function python_path()
+            local root = vim.fs.root(0, ".venv")
+            return root and (root .. "/.venv/bin/python") or "python3"
+        end
 
-        vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Debug: Toggle breakpoint" })
-        vim.keymap.set("n", "<leader>dB", function()
-            vim.ui.input({ prompt = "Breakpoint condition: " }, function(condition)
-                if condition and condition ~= "" then
-                    dap.set_breakpoint(condition)
-                end
-            end)
-        end, { desc = "Debug: Set conditional breakpoint" })
-        vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Debug: Start or continue" })
-        vim.keymap.set("n", "<leader>dC", dap.run_to_cursor, { desc = "Debug: Run to cursor" })
-        vim.keymap.set("n", "<leader>de", dapui.eval, { desc = "Debug: Evaluate expression" })
-        vim.keymap.set("x", "<leader>de", dapui.eval, { desc = "Debug: Evaluate selection" })
-        vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Debug: Toggle UI" })
-        vim.keymap.set("n", "<leader>dx", dap.terminate, { desc = "Debug: Terminate" })
+        dap.adapters.python = function(callback, config)
+            local options = { source_filetype = "python" }
+            if config.request == "attach" then
+                callback({
+                    type = "server",
+                    host = config.connect.host,
+                    port = config.connect.port,
+                    options = options,
+                })
+            else
+                callback({ type = "executable", command = "debugpy-adapter", options = options })
+            end
+        end
+
+        dap.configurations.python = {
+            {
+                type = "python",
+                request = "launch",
+                name = "Debug current file",
+                program = "${file}",
+                console = "integratedTerminal",
+                python = python_path,
+            },
+            {
+                type = "python",
+                request = "launch",
+                name = "Debug pytest (current file)",
+                module = "pytest",
+                args = { "${file}" },
+                console = "integratedTerminal",
+                python = python_path,
+            },
+            {
+                -- Attach needs debugpy in the target environment, e.g.
+                -- uv run --with debugpy python -m debugpy --listen 5678 main.py
+                type = "python",
+                request = "attach",
+                name = "Attach to port",
+                connect = function()
+                    local port = tonumber(vim.fn.input("debugpy port: ", "5678"))
+                    return port and { host = "127.0.0.1", port = port } or dap.ABORT
+                end,
+            },
+        }
 
         dap.listeners.before.attach.dapui_config = function()
             dapui.open()

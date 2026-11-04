@@ -1,5 +1,5 @@
 cask "font-moralerspace"
 cask "neovide-app"
-cask "wezterm"
+cask "kitty"
 cask "karabiner-elements"
 cask "zen"
