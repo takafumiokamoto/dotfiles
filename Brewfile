@@ -1,3 +1,4 @@
+brew "neovim"
 cask "font-guguru-sans-code"
 cask "neovide-app"
 cask "kitty"

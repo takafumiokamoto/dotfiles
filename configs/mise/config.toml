@@ -20,6 +20,31 @@ login_shell = "zsh"
 [bootstrap.mise_shell_activate]
 zprofile = true
 
+
+### MacOS defaults ###
+[bootstrap.macos.dock]
+autohide = true
+show_recents = false
+orientation = "right"
+tilesize = 40
+
+[bootstrap.macos.finder]
+show_all_files = true
+show_pathbar = true
+preferred_view_style = "list"
+
+[bootstrap.macos.keyboard]
+key_repeat = 5
+initial_key_repeat = 25
+press_and_hold = false
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+
+[bootstrap.macos.defaults.NSGlobalDomain]
+AppleAccentColor = 1
+### MacOS defaults ###
+
 [tools]
 # Go
 go = "latest"
@@ -61,7 +86,6 @@ pinact = "latest"
 tree-sitter = "latest"
 fd = "latest"
 fzf = "latest"
-neovim = "latest"
 ripgrep = "latest"
 starship = "latest"
 gh = "latest"
