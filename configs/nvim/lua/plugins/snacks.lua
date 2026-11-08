@@ -27,9 +27,13 @@ return {
         scroll = { enabled = false },
         statuscolumn = { enabled = false },
         words = { enabled = false },
+        zen = {
+            toggles = { dim = false },
+        },
     },
     keys = {
         { "<leader>bd", snacks("bufdelete"), desc = "Delete Buffer" },
+        { "<leader>z", snacks("zen"), desc = "Toggle Zen Mode" },
         {
             "<c-\\>",
             snacks("terminal", nil, {

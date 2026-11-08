@@ -1,11 +1,11 @@
 onboarding = false
 
 [theme]
-#name = "vesper"
 name = "vesper"
 auto_switch = false
 
 [keys]
+prefix = "ctrl+s"
 split_vertical = "prefix+%"
 split_horizontal = 'prefix+"'
 previous_workspace = "prefix+("
