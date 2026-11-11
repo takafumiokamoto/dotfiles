@@ -16,6 +16,8 @@ return {
         { "<S-F5>", "<cmd>DapTerminate<cr>", desc = "Debug: Terminate" },
         { "<F10>", "<cmd>DapStepOver<cr>", desc = "Debug: Step over" },
         { "<F11>", "<cmd>DapStepInto<cr>", desc = "Debug: Step in" },
+        { "<C-F11>", "<cmd>DapStepInto<cr>", desc = "Debug: Step in" },
+        { "<F35>", "<cmd>DapStepInto<cr>", desc = "Debug: Step in" },
         { "<S-F11>", "<cmd>DapStepOut<cr>", desc = "Debug: Step out" },
 
         { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Debug: Toggle break point" },
@@ -31,7 +33,13 @@ return {
     config = function()
         local dap = require("dap")
 
-        require("dapui").setup()
+        require("dapui").setup({})
+
+        vim.api.nvim_create_autocmd("ColorScheme", {
+            callback = function()
+                vim.api.nvim_set_hl(0, "debugPC", { bg = "#484815" })
+            end,
+        })
 
         dap.adapters.debugpy = {
             type = "executable",
@@ -44,11 +52,8 @@ return {
                 request = "launch",
                 name = "Launch current file",
                 program = "${file}",
-                -- Pass the function itself, not its result, so it runs when the session starts.
                 python = project_python,
-                -- Run from the project root like `uv run`; debugpy defaults to the script's directory.
                 cwd = "${workspaceFolder}",
-                -- Show output and accept input() in a terminal split instead of the REPL.
                 console = "integratedTerminal",
             },
             {
@@ -60,6 +65,25 @@ return {
                 python = project_python,
                 cwd = "${workspaceFolder}",
                 console = "integratedTerminal",
+            },
+        }
+
+        dap.adapters.go = {
+            type = "server",
+            port = "${port}",
+            executable = {
+                command = "dlv",
+                args = { "dap", "-l", "127.0.0.1:${port}" },
+            },
+        }
+
+        dap.configurations.go = {
+            {
+                type = "go",
+                request = "launch",
+                name = "Run current Go file",
+                program = "${file}",
+                outputMode = "remote",
             },
         }
     end,
