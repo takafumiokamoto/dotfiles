@@ -37,6 +37,7 @@ preferred_view_style = "list"
 key_repeat = 5
 initial_key_repeat = 25
 press_and_hold = false
+fn_state = true
 
 [bootstrap.macos.trackpad]
 tap_to_click = true
