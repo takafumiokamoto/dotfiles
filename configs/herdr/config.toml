@@ -5,7 +5,7 @@ name = "vesper"
 auto_switch = false
 
 [keys]
-prefix = "ctrl+s"
+prefix = "ctrl+b"
 split_vertical = "prefix+%"
 split_horizontal = 'prefix+"'
 previous_workspace = "prefix+("
