@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+metadata:
+  winget:
+    processor: dscv3
+resources:
+  - name: WezTerm
+    type: Microsoft.WinGet/Package
+    properties:
+      id: wez.wezterm
+      source: winget
+      acceptAgreements: true
+    metadata:
+      winget:
+        securityContext: elevated
+
+  - name: Neovide
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Neovide.Neovide
+      source: winget
+      acceptAgreements: true
+    metadata:
+      winget:
+        securityContext: elevated
+
+  - name: Zen Browser
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Zen-Team.Zen-Browser
+      source: winget
+      acceptAgreements: true
+    metadata:
+      winget:
+        securityContext: elevated

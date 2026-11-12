@@ -31,5 +31,4 @@ vim.opt.cmdheight = 0
 vim.opt.linespace = 0
 vim.opt.titlestring = "nvim"
 
--- An empty *.tf is otherwise detected as "tf" (TF MUD client), so terraform-ls would not attach.
-vim.filetype.add({ extension = { tf = "terraform" } })
+vim.filetype.add({ extension = { tf = "terraform", winget = "yaml" } })

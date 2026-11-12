@@ -7,7 +7,12 @@ MISE_CONFIG="$PROJECT_ROOT/configs/mise/config.toml"
 cd "$PROJECT_ROOT"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    brew bundle --file="$PROJECT_ROOT/Brewfile"
+    BREW_BIN=/opt/homebrew/bin/brew
+    if [[ ! -x "$BREW_BIN" ]]; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    eval "$("$BREW_BIN" shellenv)"
+    brew bundle --file="$PROJECT_ROOT/os/macos/Brewfile"
 fi
 
 if command -v mise >/dev/null 2>&1; then

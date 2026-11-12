@@ -1385,6 +1385,12 @@ aube = { path = "locks/npm-vscode-langservers-extracted/4.10.0", digest = "sha25
 backend = "npm:vscode-langservers-extracted"
 specifiers = ["latest"]
 
+[[tools."npm:yaml-language-server"]]
+version = "2.0.0"
+aube = { path = "locks/npm-yaml-language-server/2.0.0", digest = "sha256:d02e1ea379d5d5dd4489ae6f5a60e7f7148856c223ce22a1748a0b1ad7e75eaf" }
+backend = "npm:yaml-language-server"
+specifiers = ["latest"]
+
 [[tools.oxfmt]]
 version = "0.78.0"
 aube = { path = "locks/oxfmt/0.78.0", digest = "sha256:9c7d748d74f12e07041d9a3cf72816afaede4720e38c3ee8a708438874b1bfb6" }
