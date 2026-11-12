@@ -1,8 +1,7 @@
 -- clipboard
-vim.keymap.set("v", "<C-c>", [["+y]], { desc = "Copy to Clipboard" })
 vim.keymap.set("v", "<D-c>", [["+y]], { desc = "Copy to Clipboard" })
-vim.keymap.set("v", "<C-x>", [["+d]], { desc = "Cut to Clipboard" })
-vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select All" })
+vim.keymap.set("v", "<D-x>", [["+d]], { desc = "Cut to Clipboard" })
+vim.keymap.set("n", "<D-a>", "ggVG", { desc = "Select All" })
 
 -- multiline edit
 vim.keymap.set("v", "I", "<C-v>^I", { desc = "Multiline edit from start of line" })

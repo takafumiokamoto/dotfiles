@@ -151,70 +151,6 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Hyper + A → 左半分 (🌐⌃←)",
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["fn", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + D → 右半分 (🌐⌃→)",
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["fn", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + W → 上半分 (🌐⌃↑)",
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["fn", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + S → 下半分 (🌐⌃↓)",
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["fn", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "description": "Hyper + C → 中央に配置 (🌐⌃C)",
                                 "from": {
                                     "key_code": "c",
@@ -226,22 +162,6 @@
                                     {
                                         "key_code": "c",
                                         "modifiers": ["fn", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Hyper + Q → 左上1/4 (⌃⌥⇧Q。⌘⌃⌥⇧Q は macOS の強制ログアウト用キーなので ⌘ を外して送る)",
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": ["left_control", "left_option", "left_shift"]
                                     }
                                 ],
                                 "type": "basic"

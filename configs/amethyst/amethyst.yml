@@ -1,0 +1,9 @@
+floating-is-blacklist: false
+floating:
+  - net.kovidgoyal.kitty
+  - com.neovide.neovide
+
+layouts:
+  - tall
+
+new-windows-to-main: true

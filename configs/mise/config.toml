@@ -44,16 +44,6 @@ tap_to_click = true
 
 [bootstrap.macos.defaults.NSGlobalDomain]
 AppleAccentColor = 1
-
-[bootstrap.macos.defaults.NSGlobalDomain.NSUserKeyEquivalents]
-"Top Left" = "~^$q"
-"Top Right" = "@~^$e"
-"Bottom Left" = "@~^$z"
-"Bottom Right" = "@~^$x"
-"左上" = "~^$q"
-"右上" = "@~^$e"
-"左下" = "@~^$z"
-"右下" = "@~^$x"
 ### MacOS defaults ###
 
 [tools]
@@ -121,7 +111,7 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.config/starship" = { source = "../starship", mode = "symlink" }
 "~/.config/herdr/config.toml" = { source = "../herdr/config.toml", mode = "symlink" }
 "~/.config/karabiner" = { source = "../karabiner", mode = "symlink" }
-"~/.hammerspoon/init.lua" = { source = "../hammerspoon/init.lua", mode = "symlink" }
+"~/.config/amethyst" = { source = "../amethyst", mode = "symlink" }
 "~/.clang-format" = { source = "../clang-format/.clang-format", mode = "symlink" }
 
 # zsh
