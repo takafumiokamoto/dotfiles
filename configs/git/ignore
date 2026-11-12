@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+
+# editor
+*.swp
+*.swo
+*~
+.idea/
+
+# env
+.env
+

@@ -115,6 +115,8 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.config/amethyst" = { source = "../amethyst", mode = "symlink" }
 "~/.clang-format" = { source = "../clang-format/.clang-format", mode = "symlink" }
 "~/.editorconfig" = { source = "../editorconfig/.editorconfig", mode = "symlink" }
+"~/.config/git/ignore" = { source = "../git/ignore", mode = "symlink" }
+"~/.gitconfig" = { source = "../git/.gitconfig", mode = "copy", create_if_missing = true }
 
 # zsh
 "~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }
