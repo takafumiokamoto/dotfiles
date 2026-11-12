@@ -115,6 +115,7 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.config/karabiner" = { source = "../karabiner", mode = "symlink" }
 "~/.config/amethyst" = { source = "../amethyst", mode = "symlink" }
 "~/.clang-format" = { source = "../clang-format/.clang-format", mode = "symlink" }
+"~/.editorconfig" = { source = "../editorconfig/.editorconfig", mode = "symlink" }
 
 # zsh
 "~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }

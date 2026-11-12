@@ -1357,37 +1357,37 @@ url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 
 [[tools."npm:@vtsls/language-server"]]
 version = "0.3.0"
-aube = { path = "locks/npm-vtsls-language-server/0.3.0", digest = "sha256:c0efb95948df59ed85df7a3784a8e6dd167b4ebd3d1df86f780e7ebd319c98e8" }
+aube = { path = "locks/npm-vtsls-language-server/0.3.0", digest = "sha256:1290d39082df9f9b53df7c34512a2788f78252a2dfa5def2ce411ed4c293f919" }
 backend = "npm:@vtsls/language-server"
 specifiers = ["latest"]
 
 [[tools."npm:bash-language-server"]]
 version = "5.8.1"
-aube = { path = "locks/npm-bash-language-server/5.8.1", digest = "sha256:04a8ed32e542efcdb8eec68c26ea939f6758453310d97b30d314da36841ef79f" }
+aube = { path = "locks/npm-bash-language-server/5.8.1", digest = "sha256:8d810ca2fe12ddeca0cc43ce06eb2350a957004633ef5e51a812fad7b3a3bfd6" }
 backend = "npm:bash-language-server"
 specifiers = ["latest"]
 
 [[tools."npm:pyright"]]
 version = "1.1.414"
-aube = { path = "locks/npm-pyright/1.1.414", digest = "sha256:69cd62e5613c907964fbb78b05a85eb9d12a503285d716f6529144cc884cf656" }
+aube = { path = "locks/npm-pyright/1.1.414", digest = "sha256:58032e2124416f784f56e99320f9fe66b439bcf20233d48c5e7125e14ace090f" }
 backend = "npm:pyright"
 specifiers = ["latest"]
 
 [[tools."npm:vscode-json-languageserver"]]
 version = "1.3.4"
-aube = { path = "locks/npm-vscode-json-languageserver/1.3.4", digest = "sha256:ea980814315672c8a558bad0a247d31a8d4bd51ca6a273b566d2465698e8529a" }
+aube = { path = "locks/npm-vscode-json-languageserver/1.3.4", digest = "sha256:e64093dccdbe41bf4e07082523391cdce44510d995a2206433053b76a6bc4083" }
 backend = "npm:vscode-json-languageserver"
 specifiers = ["latest"]
 
 [[tools."npm:vscode-langservers-extracted"]]
 version = "4.10.0"
-aube = { path = "locks/npm-vscode-langservers-extracted/4.10.0", digest = "sha256:cfcde76c1138b72ec42fbaa9ffa06cc0e4a64bb3343ae5399e3a54d8b9a15de6" }
+aube = { path = "locks/npm-vscode-langservers-extracted/4.10.0", digest = "sha256:fbfdd1fd6e73afc902b24aa6d3cb5cd8021b69f823716f6a8379ede359e32ee1" }
 backend = "npm:vscode-langservers-extracted"
 specifiers = ["latest"]
 
 [[tools.oxfmt]]
 version = "0.78.0"
-aube = { path = "locks/oxfmt/0.78.0", digest = "sha256:0da2508ef998e667c28c917c70d56e9d70b8513831de5663f0e0bdfae343bf2b" }
+aube = { path = "locks/oxfmt/0.78.0", digest = "sha256:9c7d748d74f12e07041d9a3cf72816afaede4720e38c3ee8a708438874b1bfb6" }
 backend = "npm:oxfmt"
 specifiers = ["latest"]
 
