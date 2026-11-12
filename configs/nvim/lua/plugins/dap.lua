@@ -86,5 +86,31 @@ return {
                 outputMode = "remote",
             },
         }
+
+        if vim.fn.has("mac") == 1 then
+            dap.adapters["lldb-dap"] = {
+                type = "executable",
+                command = "xcrun",
+                args = { "lldb-dap" },
+            }
+        else
+            dap.adapters["lldb-dap"] = {
+                type = "executable",
+                command = "lldb-dap",
+            }
+        end
+
+        dap.configurations.c = {
+            {
+                type = "lldb-dap",
+                request = "launch",
+                name = "Launch executable",
+                program = function()
+                    local path = vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                    return path ~= "" and path or dap.ABORT
+                end,
+                cwd = "${workspaceFolder}",
+            },
+        }
     end,
 }

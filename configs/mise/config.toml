@@ -70,6 +70,10 @@ uv = "latest"
 rust = "latest"
 rust-analyzer = "latest"
 
+# C (macOS uses Command Line Tools)
+"conda:clang-tools" = { version = "latest", os = ["linux"] }
+"conda:lldb" = { version = "latest", os = ["linux"] }
+
 # Lua
 lua-language-server = "latest"
 stylua = "latest"
@@ -107,6 +111,7 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.config/starship" = { source = "../starship", mode = "symlink" }
 "~/.config/herdr/config.toml" = { source = "../herdr/config.toml", mode = "symlink" }
 "~/.config/karabiner" = { source = "../karabiner", mode = "symlink" }
+"~/.clang-format" = { source = "../clang-format/.clang-format", mode = "symlink" }
 
 # zsh
 "~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }
