@@ -4,6 +4,30 @@ floating:
   - com.neovide.neovide
 
 layouts:
-  - tall
+  - tall-right
 
-new-windows-to-main: true
+new-windows-to-main: false
+
+focus-cw:
+  mod: mod1
+  key: n
+
+focus-ccw:
+  mod: mod1
+  key: p
+
+focus-screen-cw:
+  mod: mod1
+  key: j
+
+focus-screen-ccw:
+  mod: mod1
+  key: k
+
+shrink-main:
+  mod: mod1
+  key: l
+
+expand-main:
+  mod: mod1
+  key: h
