@@ -17,9 +17,6 @@ lockfile = true
 [bootstrap.user]
 login_shell = "zsh"
 
-[bootstrap.mise_shell_activate]
-zprofile = true
-
 ### MacOS defaults ###
 [bootstrap.macos.dock]
 autohide = true
@@ -110,21 +107,25 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.config/mise" = { source = ".", mode = "symlink" }
 "~/.config/nvim" = { source = "../nvim", mode = "symlink" }
 "~/.config/wezterm" = { source = "../wezterm", mode = "symlink" }
-"~/.config/kitty" = { source = "../kitty", mode = "symlink" }
 "~/.config/neovide" = { source = "../neovide", mode = "symlink" }
 "~/.config/starship" = { source = "../starship", mode = "symlink" }
 "~/.config/herdr/config.toml" = { source = "../herdr/config.toml", mode = "symlink" }
-"~/.config/karabiner" = { source = "../karabiner", mode = "symlink" }
-"~/.config/amethyst" = { source = "../amethyst", mode = "symlink" }
 "~/.clang-format" = { source = "../clang-format/.clang-format", mode = "symlink" }
 "~/.editorconfig" = { source = "../editorconfig/.editorconfig", mode = "symlink" }
 "~/.config/git/ignore" = { source = "../git/ignore", mode = "symlink" }
 "~/.gitconfig" = { source = "../git/.gitconfig", mode = "copy", create_if_missing = true }
 
-# zsh
-"~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink" }
-"~/.zshrc" = { source = "../zsh/.zshrc", mode = "symlink" }
-"~/.aliases.zsh" = { source = "../zsh/.aliases.zsh", mode = "symlink" }
-"~/.hushlogin" = { source = "../zsh/.hushlogin", mode = "symlink" }
-"~/.zprofile/homebrew" = { line = '[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"', position = "prepend" }
+# macos
+"~/.config/karabiner" = { source = "../karabiner", mode = "symlink", variants = [{ os = "macos" }] }
+"~/.config/amethyst" = { source = "../amethyst", mode = "symlink", variants = [{ os = "macos" }] }
+
+# unix
+"~/.config/kitty" = { source = "../kitty", mode = "symlink", variants = [{ os = "unix" }] }
+"~/.zshenv" = { source = "../zsh/.zshenv", mode = "symlink", variants = [{ os = "unix" }] }
+"~/.zprofile" = { source = "../zsh/.zprofile", mode = "symlink", variants = [{ os = "unix" }] }
+"~/.zshrc" = { source = "../zsh/.zshrc", mode = "symlink", variants = [{ os = "unix" }] }
+"~/.aliases.zsh" = { source = "../zsh/.aliases.zsh", mode = "symlink", variants = [
+    { os = "unix" },
+] }
+"~/.hushlogin" = { source = "../zsh/.hushlogin", mode = "symlink", variants = [{ os = "unix" }] }
 
