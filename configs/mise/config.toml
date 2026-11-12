@@ -57,8 +57,10 @@ golangci-lint = "latest"
 node = "latest"
 "npm:@vtsls/language-server" = { version = "latest", depends = "node" }
 "npm:vscode-json-languageserver" = { version = "latest", depends = "node" }
+"npm:vscode-langservers-extracted" = { version = "latest", depends = "node" }
 pnpm = "latest"
 oxfmt = "latest"
+oxlint = "latest"
 
 # Python
 python = "latest"
