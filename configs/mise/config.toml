@@ -20,7 +20,6 @@ login_shell = "zsh"
 [bootstrap.mise_shell_activate]
 zprofile = true
 
-
 ### MacOS defaults ###
 [bootstrap.macos.dock]
 autohide = true
@@ -96,9 +95,9 @@ fzf = "latest"
 ripgrep = "latest"
 starship = "latest"
 gh = "latest"
-aws-cli = { version = "latest", symlink_bins = "true" }
+aws-cli = { version = "latest", symlink_bins = "true", os = ["linux", "macos"] }
 task = "latest"
-herdr = { version = "latest", minimum_release_age = "0d" }
+herdr = "latest"
 
 # AI
 codex = { version = "latest", minimum_release_age = "0d" }
