@@ -5,6 +5,8 @@ $MiseConfig = Join-Path $ProjectRoot 'configs\mise\config.toml'
 
 Set-Location $ProjectRoot
 
+winget configure --enable
+
 winget configure --file (Join-Path $ProjectRoot 'os\windows\apps.winget') --accept-configuration-agreements
 if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
