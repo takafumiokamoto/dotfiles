@@ -114,6 +114,7 @@ claude = { version = "latest", minimum_release_age = "0d" }
 "~/.editorconfig" = { source = "../editorconfig/.editorconfig", mode = "symlink" }
 "~/.config/git/ignore" = { source = "../git/ignore", mode = "symlink" }
 "~/.gitconfig" = { source = "../git/.gitconfig", mode = "copy", create_if_missing = true }
+"~/ask/AGENTS.md" = { source = "../ask/AGENTS.md", mode = "symlink" }
 
 # macos
 "~/.config/karabiner" = { source = "../karabiner", mode = "symlink", variants = [{ os = "macos" }] }

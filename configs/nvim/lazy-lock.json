@@ -15,6 +15,7 @@
   "nvim-dap": { "branch": "master", "commit": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264" },
   "nvim-dap-ui": { "branch": "master", "commit": "cc9dd33aade7f20bae414d0cba163bc60d4d4b43" },
   "nvim-nio": { "branch": "master", "commit": "edcc181a875301dd21840189aa2f2f9ad69fc172" },
+  "nvim-ts-autotag": { "branch": "main", "commit": "d7220b55e16ed3c04e88086256def5d282429493" },
   "nvim-web-devicons": { "branch": "master", "commit": "0dc0cfb0c6858041174a53c7aa4adaf65e994b3c" },
   "oil.nvim": { "branch": "master", "commit": "d3733d933833a0e59b813ecec99341527adf0c28" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
