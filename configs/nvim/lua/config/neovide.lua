@@ -58,16 +58,15 @@ end
 neovide_animation(neovide_animaiton_enable)
 
 vim.keymap.set("n", "<leader>na", function()
-    neovide_animaiton_enable = not neovide_animaiton_enable
-    neovide_animation(neovide_animaiton_enable)
+    neovide_animation(not neovide_animaiton_enable)
 end, { desc = "toggle Neovide Animation" })
 
 vim.g.neovide_scale_factor = 1.0
 vim.keymap.set({ "n", "v", "o", "i", "c", "t" }, "<D-=>", function()
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.25
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.1
 end, { desc = "Zoom In" })
 vim.keymap.set({ "n", "v", "o", "i", "c", "t" }, "<D-->", function()
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor / 1.25
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor / 1.1
 end, { desc = "Zoom Out" })
 vim.keymap.set({ "n", "v", "o", "i", "c", "t" }, "<D-0>", function()
     vim.g.neovide_scale_factor = 1.0

@@ -23,6 +23,7 @@ return {
                 },
                 flat_background = {
                     line_numbers = true,
+                    cursor_line_number = true,
                 },
             })
         end,
