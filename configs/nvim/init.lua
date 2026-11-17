@@ -6,7 +6,7 @@ for _, path in ipairs(vim.fn.glob(vim.fn.stdpath("config") .. "/lsp/*.lua", fals
     vim.lsp.enable(vim.fn.fnamemodify(path, ":t:r"))
 end
 vim.lsp.linked_editing_range.enable()
-vim.cmd("colorscheme afterglow")
+vim.cmd("colorscheme mellifluous")
 if vim.g.neovide then
     require("config.neovide")
 end
