@@ -1,7 +1,5 @@
 floating-is-blacklist: false
-floating:
-  - net.kovidgoyal.kitty
-  - com.neovide.neovide
+floating: []
 
 layouts:
   - tall-right

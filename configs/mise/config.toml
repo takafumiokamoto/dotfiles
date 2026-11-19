@@ -1,6 +1,7 @@
 [settings]
 experimental = true
 lockfile = true
+minimum_release_age_excludes = ["core:*"]
 
 [bootstrap.packages]
 "apk:zsh" = "latest"
@@ -102,6 +103,7 @@ herdr = "latest"
 # AI
 codex = { version = "latest", minimum_release_age = "0d" }
 claude = { version = "latest", minimum_release_age = "0d" }
+adr-tools = "latest"
 
 [dotfiles]
 "~/.config/mise" = { source = ".", mode = "symlink" }
