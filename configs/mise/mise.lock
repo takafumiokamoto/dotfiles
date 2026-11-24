@@ -659,125 +659,125 @@ url = "https://github.com/npryce/adr-tools/archive/refs/tags/3.0.0.tar.gz"
 url_api = "https://api.github.com/repos/npryce/adr-tools/tarball/3.0.0"
 
 [[tools.aws-cli]]
-version = "2.41.0"
+version = "2.41.1"
 backend = "aqua:aws/aws-cli"
 specifiers = ["latest"]
 
 [tools.aws-cli."platforms.linux-arm64"]
-checksum = "sha256:a1bdbb55835d5e5159f7ad9ad4f55bcce838565a2f12aded2aefee2f4bf71d0a"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.41.0.zip"
+checksum = "sha256:83f3bb8440cf6a05e6289f8024126b8c8e15e9513adfe0d6c059747350cdb1e2"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.41.1.zip"
 
 [tools.aws-cli."platforms.linux-arm64-musl"]
-checksum = "sha256:a1bdbb55835d5e5159f7ad9ad4f55bcce838565a2f12aded2aefee2f4bf71d0a"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.41.0.zip"
+checksum = "sha256:83f3bb8440cf6a05e6289f8024126b8c8e15e9513adfe0d6c059747350cdb1e2"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-aarch64-2.41.1.zip"
 
 [tools.aws-cli."platforms.linux-x64"]
-checksum = "sha256:41c0e2d33e30ff34f0fcac8ec2a013d8c3b95100cf7d4bd1007302b7d4f655e5"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.41.0.zip"
+checksum = "sha256:f1b67518c009e9deb94152aaba5cc015e80af6b0630a7931d3662df42b5f568e"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.41.1.zip"
 
 [tools.aws-cli."platforms.linux-x64-musl"]
-checksum = "sha256:41c0e2d33e30ff34f0fcac8ec2a013d8c3b95100cf7d4bd1007302b7d4f655e5"
-url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.41.0.zip"
+checksum = "sha256:f1b67518c009e9deb94152aaba5cc015e80af6b0630a7931d3662df42b5f568e"
+url = "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.41.1.zip"
 
 [tools.aws-cli."platforms.macos-arm64"]
-checksum = "blake3:9491098bea46dead39181f3a1f0c4f1f2042b409997f3d4d47acf8a7e79f5884"
-url = "https://awscli.amazonaws.com/AWSCLIV2-2.41.0.pkg"
+checksum = "blake3:efee6f64fd5c5853aa7e0492b7d42bd0bc2d5b8e0c503b321db867fcacaf23fa"
+url = "https://awscli.amazonaws.com/AWSCLIV2-2.41.1.pkg"
 
 [tools.aws-cli."platforms.macos-x64"]
-checksum = "sha256:e4212731cf74ec59a049f6097412fe2c9d0553e0dbee71cb24611e829b2ed403"
-url = "https://awscli.amazonaws.com/AWSCLIV2-2.41.0.pkg"
+checksum = "sha256:fcc64d3b7c5425a7e236bfb2faba4cbdfa580f888c7165268715e474d9d1408d"
+url = "https://awscli.amazonaws.com/AWSCLIV2-2.41.1.pkg"
 
 [[tools.claude]]
-version = "2.1.328"
+version = "2.1.329"
 backend = "aqua:anthropics/claude-code"
 specifiers = ["latest"]
 
 [tools.claude."platforms.linux-arm64"]
-checksum = "sha256:e95be009ef9548aec0bd34fe2d2736e9b887aef7452b31a8cd3d00cfe0ed7382"
+checksum = "sha256:411de30d67dc3f4fbb37cd93f17370352dd1fd42a7d08afa41b94e0569c6198a"
 checksum_source = "mise-versions"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765459532"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851030"
 
 [tools.claude."platforms.linux-arm64-musl"]
-checksum = "sha256:fa4d3dd5e05c8025e830b574a9269fbc5f832d155548df59f464a952ef9dfbca"
+checksum = "sha256:d28bae68843bbb578946ee3ef8a818ba8deddd6e49484a04e89d581d46f2d23b"
 checksum_source = "mise-versions"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-linux-arm64-musl.tar.gz"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765459527"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-linux-arm64-musl.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851034"
 
 [tools.claude."platforms.linux-x64"]
-checksum = "sha256:4404b3dc35afe7dde16c572197f69c210dffdb038f05ee3c532e683732f5aa9f"
+checksum = "sha256:248f23231556ba4d13cc6dde6a9ed7625f36cf94aeb4c5652d05f72d093c1b46"
 checksum_source = "mise-versions"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-linux-x64.tar.gz"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765460041"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-linux-x64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851253"
 
 [tools.claude."platforms.linux-x64-musl"]
-checksum = "sha256:41543d09a326ff4a07fa2b0de551983d89f04adc0f7777e2af6374c8dd8f3761"
+checksum = "sha256:a19c1d86a27bf32cbb02eb6ce1c56a7a3a7c6e134354eeb00561466a6d18a206"
 checksum_source = "mise-versions"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-linux-x64-musl.tar.gz"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765459531"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-linux-x64-musl.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851036"
 
 [tools.claude."platforms.macos-arm64"]
-checksum = "sha256:04f981829d2749bac30a4fee1e533e2c8f826071926703d351fc1a30807b2655"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765459526"
+checksum = "sha256:581c88b6c7363d85b56e179e9cd6831b2b9dcffebffdbdb0751ee228a296e38b"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851032"
 
 [tools.claude."platforms.macos-x64"]
-checksum = "sha256:620b53b98de2ddf4d96311b2e575fb529b202de88c8666e87db20ba945f80f76"
+checksum = "sha256:6fdedf68664c8c24d6dec65441f554b3c400fba97e41af70b92e3d99a23144b2"
 checksum_source = "mise-versions"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-darwin-x64.tar.gz"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765459528"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-darwin-x64.tar.gz"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851035"
 
 [tools.claude."platforms.windows-x64"]
-checksum = "sha256:20d444ebbf729ce29693cfafb98131f207e83f16ed57a743913a5a9ee14c49cb"
+checksum = "sha256:b5708b5e5743dbf4c3bcfc46ee85e011381282eced593462f0a4d2342083fc81"
 checksum_source = "mise-versions"
-url = "https://github.com/anthropics/claude-code/releases/download/v2.1.328/claude-win32-x64.zip"
-url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/765460077"
+url = "https://github.com/anthropics/claude-code/releases/download/v2.1.329/claude-win32-x64.zip"
+url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/768851297"
 
 [[tools.codex]]
-version = "0.170.0"
+version = "0.171.0"
 backend = "aqua:openai/codex"
 specifiers = ["latest"]
 
 [tools.codex."platforms.linux-arm64"]
-checksum = "sha256:3f7e1ae38c4fe27322e082b855e8eec936d08fa538d62b71c07e2a53f34e8847"
+checksum = "sha256:d8c43bee6cf11b01eb18b95f4d7961092bc40228180808859e70dabb7784c1c9"
 checksum_source = "mise-versions"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761751065"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769865205"
 
 [tools.codex."platforms.linux-arm64-musl"]
-checksum = "sha256:3f7e1ae38c4fe27322e082b855e8eec936d08fa538d62b71c07e2a53f34e8847"
+checksum = "sha256:d8c43bee6cf11b01eb18b95f4d7961092bc40228180808859e70dabb7784c1c9"
 checksum_source = "mise-versions"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761751065"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769865205"
 
 [tools.codex."platforms.linux-x64"]
-checksum = "sha256:a77ff87be7ba809d715728270a78f5ce3527dc07529416d1ef8929b90b8475eb"
+checksum = "sha256:8391d67757496bfd14893eca6cbf0c96994bf2627566ff1f018f70600c9ef6b3"
 checksum_source = "mise-versions"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761754998"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769869089"
 
 [tools.codex."platforms.linux-x64-musl"]
-checksum = "sha256:a77ff87be7ba809d715728270a78f5ce3527dc07529416d1ef8929b90b8475eb"
+checksum = "sha256:8391d67757496bfd14893eca6cbf0c96994bf2627566ff1f018f70600c9ef6b3"
 checksum_source = "mise-versions"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761754998"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769869089"
 
 [tools.codex."platforms.macos-arm64"]
-checksum = "sha256:975524bf13aedd1b122d8d0e00c09ee67091b8f688c0b374943dbb3cf22c7893"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761748574"
+checksum = "sha256:58c88032ec446e72922d911d8f03773102da20c16a6059cf21f6744bce57f210"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769863147"
 
 [tools.codex."platforms.macos-x64"]
-checksum = "sha256:2e971524460a570b913dbdc9b49e5e9c14556e44e7f62f00b95b4a8f1e2cdf25"
+checksum = "sha256:dd130ea3217b4e6fe4454c99949e0b28e2e8a9ad8da8c3a75f0c7265fab7153b"
 checksum_source = "mise-versions"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761752584"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769866856"
 
 [tools.codex."platforms.windows-x64"]
-checksum = "sha256:6ff4b22c63645ffd83aed9b722cbb0b9e5b79dc6e8916f50e362b3015fb327a9"
+checksum = "sha256:669941eff23dd8470fbf85d919a03d80c4e3d35b441e3fcd361c0f8630945be8"
 checksum_source = "mise-versions"
-url = "https://github.com/openai/codex/releases/download/rust-v0.170.0/codex-package-x86_64-pc-windows-msvc.tar.gz"
-url_api = "https://api.github.com/repos/openai/codex/releases/assets/761754018"
+url = "https://github.com/openai/codex/releases/download/rust-v0.171.0/codex-package-x86_64-pc-windows-msvc.tar.gz"
+url_api = "https://api.github.com/repos/openai/codex/releases/assets/769868206"
 
 [[tools."conda:clang-tools"]]
 version = "23.1.5"
@@ -1267,6 +1267,52 @@ checksum = "sha256:cd7ea6063c95de245e17e5246e42bdc14bb221792c429dbd239ab3a6ade6c
 url = "https://github.com/golangci/golangci-lint/releases/download/v2.15.0/golangci-lint-2.15.0-windows-amd64.zip"
 url_api = "https://api.github.com/repos/golangci/golangci-lint/releases/assets/647132900"
 provenance = "github-attestations"
+
+[[tools.golangci-lint-langserver]]
+version = "0.0.12"
+backend = "aqua:nametake/golangci-lint-langserver"
+specifiers = ["latest"]
+
+[tools.golangci-lint-langserver."platforms.linux-arm64"]
+checksum = "sha256:4b1b582213978803bb215a36c88c2fbbd14e26bf15e0377c74f04dbe424c1063"
+checksum_source = "mise-versions"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564689"
+
+[tools.golangci-lint-langserver."platforms.linux-arm64-musl"]
+checksum = "sha256:4b1b582213978803bb215a36c88c2fbbd14e26bf15e0377c74f04dbe424c1063"
+checksum_source = "mise-versions"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564689"
+
+[tools.golangci-lint-langserver."platforms.linux-x64"]
+checksum = "sha256:7c4a200f34af3de4188a792ba676994ce5fdb181dd4731e10cd3cc501e722b28"
+checksum_source = "mise-versions"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Linux_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564690"
+
+[tools.golangci-lint-langserver."platforms.linux-x64-musl"]
+checksum = "sha256:7c4a200f34af3de4188a792ba676994ce5fdb181dd4731e10cd3cc501e722b28"
+checksum_source = "mise-versions"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Linux_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564690"
+
+[tools.golangci-lint-langserver."platforms.macos-arm64"]
+checksum = "sha256:e630712320bcc1c75a1584f2b46a5c7ee7b15e603bb180b8b42c2932302d2a95"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564693"
+
+[tools.golangci-lint-langserver."platforms.macos-x64"]
+checksum = "sha256:3ba8589115bb1b0d5df70f8139d774120830bf9dc9f716b60f5e0fb3269c504f"
+checksum_source = "mise-versions"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Darwin_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564688"
+
+[tools.golangci-lint-langserver."platforms.windows-x64"]
+checksum = "sha256:39b900b6b18bdc0328a9a58539af2bfc0bdaad9c2f217c1afa7921717d11e4d6"
+checksum_source = "mise-versions"
+url = "https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.12/golangci-lint-langserver_Windows_x86_64.zip"
+url_api = "https://api.github.com/repos/nametake/golangci-lint-langserver/releases/assets/360564698"
 
 [[tools.herdr]]
 version = "0.9.5"

@@ -30,6 +30,7 @@ vim.opt.winborder = "rounded"
 vim.opt.cmdheight = 0
 vim.opt.linespace = 0
 vim.opt.titlestring = "nvim"
+vim.opt.laststatus = 0
 require("vim._core.ui2").enable({})
 
 vim.filetype.add({ extension = { tf = "terraform", winget = "yaml" } })

@@ -49,6 +49,7 @@ go = "latest"
 "go:golang.org/x/tools/gopls" = { version = "latest", depends = "go" }
 "go:github.com/go-delve/delve/cmd/dlv" = { version = "latest", depends = "go" }
 golangci-lint = "latest"
+golangci-lint-langserver = "latest"
 
 # node
 node = "latest"
@@ -117,6 +118,7 @@ adr-tools = "latest"
 "~/.config/git/ignore" = { source = "../git/ignore", mode = "symlink" }
 "~/.gitconfig" = { source = "../git/.gitconfig", mode = "copy", create_if_missing = true }
 "~/ask/AGENTS.md" = { source = "../ask/AGENTS.md", mode = "symlink" }
+"~/.claude/settings.json/shared" = { source = "../claude/settings.json", merge = true }
 
 # macos
 "~/.config/karabiner" = { source = "../karabiner", mode = "symlink", variants = [{ os = "macos" }] }
