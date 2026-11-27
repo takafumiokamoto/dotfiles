@@ -1,4 +1,8 @@
 brew "neovim"
+brew "docker"
+brew "docker-compose"
+brew "docker-buildx"
+brew "colima", start_service: true
 cask "font-guguru-sans-code"
 cask "neovide-app"
 cask "kitty"
