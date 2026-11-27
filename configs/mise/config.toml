@@ -119,6 +119,8 @@ adr-tools = "latest"
 "~/.gitconfig" = { source = "../git/.gitconfig", mode = "copy", create_if_missing = true }
 "~/ask/AGENTS.md" = { source = "../ask/AGENTS.md", mode = "symlink" }
 "~/.claude/settings.json/shared" = { source = "../claude/settings.json", merge = true }
+"~/.claude/skills/english-proofreading" = { source = "../agents/skills/english-proofreading", mode = "symlink" }
+"~/.agents/skills/english-proofreading" = { source = "../agents/skills/english-proofreading", mode = "symlink" }
 "~/.docker/config.json/shared" = { source = "../docker/config.json", merge = true }
 
 # macos
