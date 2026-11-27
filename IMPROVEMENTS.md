@@ -35,7 +35,7 @@
   - 現状: タイル時の余白オフ、デスクトップのアイコンとウィジェットの非表示、ダークモードは、この Mac では設定済みですが `configs/mise/config.toml:21-44` にありません。
   - 対応: `[bootstrap.macos.defaults."com.apple.WindowManager"]` に `EnableTiledWindowMargins`、`StandardHideDesktopIcons`、`StandardHideWidgets` を足し、`NSGlobalDomain` に `AppleInterfaceStyle = "Dark"` を足します。
 - [x] `R-09` **ネイティブ Windows で使われないツールが入る**
-  - 現状: `install.ps1:33` は `[tools]` のほぼ全部(36 個)を入れますが、PowerShell で mise を有効化していないので使う経路がありません。
+  - 現状: `install.ps1:55` は `[tools]` のほぼ全部(36 個)を入れますが、PowerShell で mise を有効化していないので使う経路がありません。
   - 対応: WSL のホストとしてだけ使うなら `--skip tools` を付けます。
 
 ## 2. すぐ直せる不具合
@@ -180,7 +180,7 @@
 ## 4. 運用
 
 - [ ] `M-10` **セットアップ時の既存 dotfiles の上書きを明示指定にする**
-  - `install.sh:30` と `install.ps1:33` は毎回 `--yes --force-dotfiles` を渡します。たとえば Unix で手書きの `~/.zshrc` があると、そのファイルも確認なしでリンクに置き換わります。
+  - `install.sh:50` と `install.ps1:55` は毎回 `--yes --force-dotfiles` を渡します。たとえば Unix で手書きの `~/.zshrc` があると、そのファイルも確認なしでリンクに置き換わります。
   - `--force-dotfiles` は上書きを指定したときだけ渡します。初回はスクリプトと同じ `MISE_GLOBAL_CONFIG_FILE` を指定して `mise bootstrap --only dotfiles --dry-run` で対象を確認し、必要な設定を退避してから適用できます。
 - [ ] `M-01` **生成ファイルをフォーマッタから守る**
   - 現状: `4c0c728` で oxfmt がロックのサイドカー(`configs/mise/locks/`)を整形し、ダイジェストが変わって同じバージョンのツールが入り直しています。`configs/karabiner/karabiner.json` も、oxfmt の書式と Karabiner 自身の書式が食い違っています。
@@ -202,7 +202,7 @@
   - 現状: `mise prune --dry-run` で 47 バージョン、約 7 GB が対象です。
   - 対応: 内容を確認してから `mise prune` を実行します。
 - [ ] `M-08` **Brewfile を `[bootstrap.packages]` に移す**
-  - 現状: `install.sh:15` の `brew bundle` は、再実行時にアップグレードも行います。宣言していない cask が 5 つあります(discord、foobar2000、google-chrome、tidal、font-moralerspace)。
+  - 現状: `install.sh:35` の `brew bundle` は、再実行時にアップグレードも行います。宣言していない cask が 5 つあります(discord、foobar2000、google-chrome、tidal、font-moralerspace)。
   - 対応: 各エントリを `"brew-cask:<名前>" = { os = "macos" }` の形で書きます。先に未宣言分を整理してください。`mise bootstrap packages prune` は宣言外のものを削除するので、実行しないでください。最小の対応は `--no-upgrade` を付けることです。
 - [ ] `M-09` **npm と uv にもリリース後の待機期間を設ける(未検証)**
   - 現状: mise 管理のツールには 24 時間の待機が効いていますが、npm と uv にはありません。
