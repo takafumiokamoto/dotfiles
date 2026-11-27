@@ -1,5 +1,6 @@
 alias ls='ls --color=auto'
 alias ll='ls -la'
+alias up='~/dotfiles/up.sh'
 
 # Neovide: `v` starts it on every OS
 if [[ "$OSTYPE" == darwin* ]]; then
