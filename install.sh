@@ -33,6 +33,11 @@ main() {
         fi
         eval "$("$brew_bin" shellenv)"
         brew bundle --verbose --file="$project_root/os/macos/Brewfile"
+    elif command -v apt >/dev/null 2>&1; then
+        sudo apt -y update
+        sudo apt -y upgrade
+    elif command -v pacman >/dev/null 2>&1; then
+        sudo pacman -Syu --noconfirm
     fi
 
     if command -v mise >/dev/null 2>&1; then

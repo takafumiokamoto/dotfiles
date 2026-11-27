@@ -89,6 +89,9 @@ shfmt = "latest"
 terraform = "latest"
 terraform-ls = "latest"
 
+# editor (macOS uses Homebrew)
+neovim = { version = "latest", os = ["linux"] }
+
 # tools
 pinact = "latest"
 tree-sitter = "latest"
