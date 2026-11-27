@@ -25,7 +25,7 @@
 - [ ] `R-05` **Windows にフォントが入らない**
   - 現状: `configs/wezterm/wezterm.lua:9` は Moralerspace Neon を `configs/wezterm/fonts` から読みますが、`.gitignore:4` で `*.ttf` を除外しています。kitty と Neovide は Guguru Sans Code で、これを入れるのは `os/macos/Brewfile:2` だけです。
   - 対応: フォントを 1 つに揃え、Windows での入手手順を README に書きます。
-- [ ] `R-06` **`.gitattributes` が無い**
+- [x] `R-06` **`.gitattributes` が無い**
   - 現状: Git for Windows の既定(`core.autocrlf=true`)でクローンすると、`install.sh` と zsh のファイルが CRLF になり動きません。
   - 対応: `* text=auto eol=lf` と `*.ps1 text eol=crlf` の 2 行を置き、`git add --renormalize .` を 1 回コミットします。ロックファイルに `linguist-generated` を付けると、GitHub の差分表示も畳まれます。
 - [ ] `R-07` **mise のバージョン差に備える**
@@ -34,7 +34,7 @@
 - [ ] `R-08` **手で設定済みの macOS 設定をリポジトリに書く**
   - 現状: タイル時の余白オフ、デスクトップのアイコンとウィジェットの非表示、ダークモードは、この Mac では設定済みですが `configs/mise/config.toml:21-44` にありません。
   - 対応: `[bootstrap.macos.defaults."com.apple.WindowManager"]` に `EnableTiledWindowMargins`、`StandardHideDesktopIcons`、`StandardHideWidgets` を足し、`NSGlobalDomain` に `AppleInterfaceStyle = "Dark"` を足します。
-- [ ] `R-09` **ネイティブ Windows で使われないツールが入る**
+- [x] `R-09` **ネイティブ Windows で使われないツールが入る**
   - 現状: `install.ps1:33` は `[tools]` のほぼ全部(36 個)を入れますが、PowerShell で mise を有効化していないので使う経路がありません。
   - 対応: WSL のホストとしてだけ使うなら `--skip tools` を付けます。
 
@@ -42,31 +42,32 @@
 
 ### Neovim
 
-- [ ] `B-01` **mode `"v"` のマッピングが Select モードでも発火する**
+- [x] `B-01` **mode `"v"` のマッピングが Select モードでも発火する**
   - 現状: `configs/nvim/lua/config/keymaps.lua:7-8,41-44` の I、A、`<`、`>`、J、K が対象です。スニペットのプレースホルダで K や J から打ち始めると、行移動などが実行されます。また I と A は、既に矩形選択中だと 1 行しか編集しません。
   - ヒント: `:h mapmode-x`、`:h Select-mode-mapping`、`:h v_b_I`
-- [ ] `B-02` **`cmdheight=0` で入力途中のキー、マクロ記録、検索件数が見えない**
+- [x] `B-02` **`cmdheight=0` で入力途中のキー、マクロ記録、検索件数が見えない**
   - 現状: `configs/nvim/lua/config/options.lua:9,30,33` の組み合わせで、最下行に出るはずの表示が全て消えます。
   - ヒント: `:h 'showcmdloc'`。ステータスラインを自作するなら `:h reg_recording()` と `:h searchcount()`
-- [ ] `B-03` **`<S-F5>` と `<S-F11>` がターミナル版の Neovim に届かない**
+  - 対応済み: `configs/nvim/lua/config/statusline.lua` で 3 つともステータスラインに出します。マクロ記録中はステータスラインを自動で表示します。入力途中のキーと検索件数は、ステータスラインが出ているとき(分割時、`<leader>us`、`laststatus = 3`)だけ見えます。
+- [x] `B-03` **`<S-F5>` と `<S-F11>` がターミナル版の Neovim に届かない**
   - 現状: `configs/nvim/lua/plugins/dap.lua:16,21` です。ターミナルでは `<F17>` と `<F23>` として届きます。同じファイルの `<F35>`(20 行目)と同じ理由です。Neovide では動きます。
   - ヒント: 挿入モードで `<C-v>` に続けてキーを押すと、届いている名前を確認できます。`:h i_CTRL-V`、`:h key-notation`
-- [ ] `B-04` **Neovide のアニメーション切替が ON にしかならない**
+- [x] `B-04` **Neovide のアニメーション切替が ON にしかならない**
   - 現状: `configs/nvim/lua/config/neovide.lua:60-62` は 36 行目のフラグを反転して渡すだけで、フラグ自体を更新していません。
   - ヒント: 状態を読む前に書き換えるか、`vim.g.neovide_*` の値から状態を導きます。
-- [ ] `B-05` **`<c-\>` のターミナルモード割り当てが `<C-\><C-n>` を塞いでいる**
+- [x] `B-05` **`<c-\>` のターミナルモード割り当てが `<C-\><C-n>` を塞いでいる**
   - 現状: `configs/nvim/lua/plugins/snacks.lua:38-43` です。DAP のコンソールや `:terminal` から標準の方法で抜けられません。
   - ヒント: `:h t_CTRL-\_CTRL-N`
-- [ ] `B-06` **保存時整形に穴がある**
+- [x] `B-06` **保存時整形に穴がある**
   - 現状: `.winget` は yaml 扱い(`configs/nvim/lua/config/options.lua:35`)で oxfmt に渡りますが、oxfmt が拡張子を拒否して毎回失敗します。`tsconfig.json` は `jsonc` と判定されますが、`configs/nvim/lua/plugins/format.lua` に `jsonc` がありません。16 行目の `yml` は存在しない filetype です。
   - ヒント: `:h conform-options`、`:h conform-formatters`
-- [ ] `B-07` **Neovide のターミナルモードで Cmd+V が効かない**
+- [x] `B-07` **Neovide のターミナルモードで Cmd+V が効かない**
   - 現状: `configs/nvim/lua/config/neovide.lua:2-3` の対象モードに `t` がありません。
   - ヒント: `:h nvim_paste()`
-- [ ] `B-08` **ui2 の呼び出しが失敗すると設定全体が止まる**
+- [x] `B-08` **ui2 の呼び出しが失敗すると設定全体が止まる**
   - 現状: `configs/nvim/lua/config/options.lua:33` は実験的な API で、`init.lua` が最初に読むファイルにあります。API が変わると、キーマップも LSP も読み込まれません。
   - ヒント: `pcall` で囲みます。
-- [ ] `B-17` **`<leader>tf` で現在のバッファを新しいタブに開けない**
+- [x] `B-17` **`<leader>tf` で現在のバッファを新しいタブに開けない**
   - `configs/nvim/lua/config/keymaps.lua:21` が呼ぶ `:tabsplit` は、Neovim 0.12.6 で `E492` になります。
   - `:tab split` で同じバッファが新しいタブに開くことを確認済みです。ヘルプは `:h :tab`。
 
@@ -75,13 +76,13 @@
 - [ ] `B-09` **Delete、Home、End が効かない**
   - 現状: `configs/zsh/.zshenv:9` の `EDITOR=nvim` により、macOS の `/etc/zshrc` のバインドが vi キーマップに入ります。その後 `configs/zsh/.zshrc:11` の `bindkey -e` で emacs キーマップに切り替わるため、これらのキーは未定義になります。
   - 対応: `bindkey -e` の直後で明示的に割り当てます。Delete は `^[[3~` を `delete-char` に、Home は `^[[H` と `^[OH` を `beginning-of-line` に、End は `^[[F` と `^[OF` を `end-of-line` に割り当てます。
-- [ ] `B-10` **Python のディレクトリでプロンプト記号の前に空白が入る**
+- [x] `B-10` **Python のディレクトリでプロンプト記号の前に空白が入る**
   - 現状: `configs/starship/starship.toml:28` の `format` が、仮想環境がなくても末尾の空白を出します。
   - 対応: `format = "([$virtualenv]($style) )"` と括弧で囲みます(動作確認済み)。
-- [ ] `B-11` **`ask` と `askx` が呼び出し元のシェルを移動させる**
+- [x] `B-11` **`ask` と `askx` が呼び出し元のシェルを移動させる**
   - 現状: `configs/zsh/.zshrc:26-27` が現在のシェルで `cd ~/ask` します。
   - 対応: 本体を `( ... )` のサブシェルにします。
-- [ ] `B-12` **`neovide` エイリアスが Linux でも定義される**
+- [x] `B-12` **`neovide` エイリアスが Linux でも定義される**
   - 現状: `configs/zsh/.aliases.zsh:3` は macOS の絶対パスです。WSL 用の `v` は `configs/zsh/.zshenv:4-6` にあります。
   - 対応: `.aliases.zsh` に OS 判定つきでまとめ、どの OS でも `v` で起動できるようにします。
 

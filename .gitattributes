@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+
+configs/mise/mise.lock linguist-generated
+configs/mise/locks/** linguist-generated
+configs/nvim/lazy-lock.json linguist-generated

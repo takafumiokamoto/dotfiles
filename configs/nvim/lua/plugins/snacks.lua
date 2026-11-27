@@ -37,10 +37,16 @@ return {
         {
             "<c-\\>",
             snacks("terminal", nil, {
-                win = { position = "float", border = "rounded" },
+                win = {
+                    position = "float",
+                    border = "rounded",
+                    keys = {
+                        hide_terminal = { "<c-\\>", "hide", mode = "t", desc = "Hide Terminal" },
+                    },
+                },
             }),
             desc = "Toggle Terminal",
-            mode = { "n", "t" },
+            mode = "n",
         },
     },
 }

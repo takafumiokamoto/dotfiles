@@ -4,8 +4,13 @@ vim.keymap.set("v", "<D-x>", [["+d]], { desc = "Cut to Clipboard" })
 vim.keymap.set("n", "<D-a>", "ggVG", { desc = "Select All" })
 
 -- multiline edit
-vim.keymap.set("v", "I", "<C-v>^I", { desc = "Multiline edit from start of line" })
-vim.keymap.set("v", "A", "<C-v>$A", { desc = "Multiline edit from end of line" })
+-- "\22" is <C-v> (blockwise Visual). There <C-v> would leave Visual mode, so use the built-in I and A.
+vim.keymap.set("x", "I", function()
+    return vim.fn.mode() == "\22" and "I" or "<C-v>^I"
+end, { expr = true, desc = "Multiline edit from start of line" })
+vim.keymap.set("x", "A", function()
+    return vim.fn.mode() == "\22" and "A" or "<C-v>$A"
+end, { expr = true, desc = "Multiline edit from end of line" })
 
 -- navigation
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -18,7 +23,7 @@ vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
-vim.keymap.set("n", "<leader>tf", "<cmd>tabsplit<CR>", { desc = "Open current buffer in new tab" })
+vim.keymap.set("n", "<leader>tf", "<cmd>tab split<CR>", { desc = "Open current buffer in new tab" })
 
 --split
 vim.keymap.set("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" })
@@ -38,10 +43,10 @@ vim.keymap.set("i", "<C-h>", "<C-w>", { desc = "Delete word" })
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "clear search highlights" })
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
-vim.keymap.set("v", "<", "<gv", { desc = "Outdent lines" })
-vim.keymap.set("v", ">", ">gv", { desc = "Indent lines" })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
+vim.keymap.set("x", "<", "<gv", { desc = "Outdent lines" })
+vim.keymap.set("x", ">", ">gv", { desc = "Indent lines" })
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
 
 -- Emacs-like cursor movement in Insert mode
 vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Forward char" })

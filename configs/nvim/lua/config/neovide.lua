@@ -1,6 +1,9 @@
 vim.opt.linespace = -1
 vim.keymap.set({ "n", "v" }, "<D-v>", [["+p]])
 vim.keymap.set({ "i", "c" }, "<D-v>", "<C-r>+")
+vim.keymap.set("t", "<D-v>", function()
+    vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
+end, { desc = "Paste from Clipboard" })
 vim.keymap.set({ "n", "v", "i" }, "<D-a>", "<Esc>ggVG", { desc = "Select All" })
 vim.g.neovide_fullscreen = false
 local normal_hl = vim.api.nvim_get_hl(0, { name = "Normal" })
@@ -58,7 +61,8 @@ end
 neovide_animation(neovide_animaiton_enable)
 
 vim.keymap.set("n", "<leader>na", function()
-    neovide_animation(not neovide_animaiton_enable)
+    neovide_animaiton_enable = not neovide_animaiton_enable
+    neovide_animation(neovide_animaiton_enable)
 end, { desc = "toggle Neovide Animation" })
 
 vim.g.neovide_scale_factor = 1.0

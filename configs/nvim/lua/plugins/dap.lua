@@ -13,12 +13,15 @@ return {
     keys = {
         { "<F5>", "<cmd>DapContinue<cr>", desc = "Debug: Start/Continue" },
         { "<leader>ds", "<cmd>DapContinue<cr>", desc = "Debug: Start/Continue" },
+        -- Terminals send Shift+F<n> as <F(n+12)> and Ctrl+F<n> as <F(n+24)>.
         { "<S-F5>", "<cmd>DapTerminate<cr>", desc = "Debug: Terminate" },
+        { "<F17>", "<cmd>DapTerminate<cr>", desc = "Debug: Terminate" },
         { "<F10>", "<cmd>DapStepOver<cr>", desc = "Debug: Step over" },
         { "<F11>", "<cmd>DapStepInto<cr>", desc = "Debug: Step in" },
         { "<C-F11>", "<cmd>DapStepInto<cr>", desc = "Debug: Step in" },
         { "<F35>", "<cmd>DapStepInto<cr>", desc = "Debug: Step in" },
         { "<S-F11>", "<cmd>DapStepOut<cr>", desc = "Debug: Step out" },
+        { "<F23>", "<cmd>DapStepOut<cr>", desc = "Debug: Step out" },
 
         { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Debug: Toggle break point" },
         {

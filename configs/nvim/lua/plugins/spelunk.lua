@@ -20,6 +20,7 @@ return {
                 window_mappings = {
                     bookmark_down = "J",
                     bookmark_up = "K",
+                    close = { "q", "<C-c>" },
                 },
                 enable_persist = true,
                 enable_status_col_display = true,

@@ -23,5 +23,5 @@ if [[ -r "$HOME/.zshrc.local" ]]; then
     source "$HOME/.zshrc.local"
 fi
 
-ask() { cd ~/ask && claude -n ask "$@"}
-askx() { cd ~/ask && codex --search "$@"}
+ask() (cd ~/ask && claude -n ask "$@")
+askx() (cd ~/ask && codex --search "$@")
