@@ -53,6 +53,9 @@ main() {
     export MISE_GLOBAL_CONFIG_FILE="$mise_config"
 
     "$mise_bin" bootstrap --yes --force-dotfiles
+
+    # mise のツール(blink.cmp のビルドに使う cargo、Linux では nvim 自体)に PATH を通して実行する。
+    "$mise_bin" exec -- nvim --headless "+Lazy! restore" +qa
 }
 
 # curl | bash だと stdin が端末でなく、Homebrew のインストーラが sudo -n で失敗し、
