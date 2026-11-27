@@ -2,5 +2,8 @@ frame = "buttonless"
 title-hidden = true
 
 [font]
-normal = [{ family = "Guguru Sans Code", style = "Italic" }]
+normal = [
+  { family = "Guguru Sans Code", style = "Italic" },
+  "Symbols Nerd Font Mono",
+]
 size = 16

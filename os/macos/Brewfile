@@ -4,6 +4,7 @@ brew "docker-compose"
 brew "docker-buildx"
 brew "colima", start_service: true
 cask "font-guguru-sans-code"
+cask "font-symbols-only-nerd-font"
 cask "neovide-app"
 cask "kitty"
 cask "karabiner-elements"
