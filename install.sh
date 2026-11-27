@@ -12,7 +12,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     eval "$("$BREW_BIN" shellenv)"
-    brew bundle --file="$PROJECT_ROOT/os/macos/Brewfile"
+    brew bundle --verbose --file="$PROJECT_ROOT/os/macos/Brewfile"
 fi
 
 if command -v mise >/dev/null 2>&1; then
